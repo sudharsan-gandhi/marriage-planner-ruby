@@ -1,0 +1,59 @@
+<div class="container-fluid">
+	<span class="col-sm-3"></span>
+		<h1 class="well col-sm-6 headfont" style="background:rgba(0,0,0,0.5)">
+	<span class="col-sm-4"></span>
+	<span class="fa-stack fa-1x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+    </span> 
+LOGIN</h1>
+<span class="col-sm-3"></span>
+</div>
+
+<% if !flash[:notice].blank? %>
+<center>
+<h4 class="well headfont" style="background:rgba(1,0,0,0.5)"><%= flash[:notice] %></h4>
+</center>
+<%end%>
+<%= form_for(:user,:url => {:action => 'handler'}) do |f| %>
+
+<div class="container headfont " >    <span class="col-sm-3"></span><span class="col-sm-6">
+
+<h3 class="well" style="background:rgba(0,0,0,0.3)"><center>New user?<span > <%= link_to "Register here",:controller=>'login',:action=>'new'%></span></center></h3></span>
+<span class="col-sm-3"></span>
+</div>
+
+
+
+<br>
+<div class="container">
+<div >
+    <span class="col-sm-3"></span>
+	<label class="loginfont" >Email ID:</label>
+</div>
+
+<div>
+	<span class="col-sm-3"></span><%= f.email_field(:email,:placeholder => "eg:sudharsangandhi@gmail.com", :maxlength => 100,:class=>'input') %>
+
+</div>
+
+<div >
+<span class="col-sm-3"></span>
+<label class="loginfont">Password:</label>
+</div>
+<div>
+<span class="col-sm-3"></span><%=f.password_field(:password,:maxlength => 25,:placeholder => "C$2kmql3",:class=>'input')%>
+</div>
+
+
+
+
+<br>
+<div>
+
+	<span class="col-sm-2"></span><button type="submit" class="col-sm-3 btn btn-primary btn-lg"><span class="glyphicon glyphicon-play"></span> SUBMIT</button><span class="col-sm-1"></span>
+	<button type="reset" value="reset" class="col-sm-3 page-scroll btn btn-danger btn-lg"><span class="glyphicon glyphicon-retweet"></span> RESET</button>
+</div>
+</div>
+
+<% end %>

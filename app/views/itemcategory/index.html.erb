@@ -1,0 +1,28 @@
+<h1>Itemcategories</h1>
+<%= link_to("Add new Category",{:action => 'new'} )%></br>
+<% @itemcat.each do |c| %>
+<table>
+<tr>
+	<th>select</th>
+	<th>Category ID</th>
+	<th>Category Name</th>
+	<th>Category Description</th>
+	<th>Options</th>
+	
+</tr>
+<tr>
+	<td><input type="radio" name="cat" id="cat value="<%= c.ID%>"></td>
+	<td><%= c.ID %></td>
+	<td><%= c.CategoryName%></td>
+	<td><%= c.CategoryDescription%></td> 
+	<td><%= link_to("show",{:controller => 'item',:action =>'show',:id => c.ID,:cat=> c.CategoryName}) %>
+	    <%= link_to("edit",'#') %>
+	    <%= link_to("delete",'#') %>
+	<td>
+</tr>
+
+
+</table>
+
+<%= link_to("view category",) %>
+<% end%>

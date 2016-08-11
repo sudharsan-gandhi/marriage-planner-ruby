@@ -1,0 +1,22 @@
+<h1>All items Category</h1>
+<table>
+	<tr>
+	<th>Item ID</th>
+	<th>Item Name </th>
+	<th>Item Category</th>
+	<th>Item Description</th>
+	<th>Item Cost</th>
+	<th>Options</th>
+	</tr>
+	<% @item.each do |i| %>
+	<tr>
+	<td><%= i.ID %></td>
+	<td><%=i.ItemName %></td>
+	<td><%= i.ItemCategory_ID %></td>
+	<td><%= i.ItemDescription %></td>
+	<td><%= i.ItemCost %> </td>
+	<td><%= link_to("show",'#') link_to("edit",'#') link_to("delete",'#') %><td>
+	</tr>
+	<%end %>
+</table>
+

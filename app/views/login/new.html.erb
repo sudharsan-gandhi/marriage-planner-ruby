@@ -1,0 +1,72 @@
+<div class="container-fluid">
+	<span class="col-sm-3"></span>
+		<h1 class="well col-sm-6 headfont" style="background:rgba(0,0,0,0.5)">
+	<span class="col-sm-3"></span>
+	<span class="fa-stack fa-1x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+    </span> Registration
+</h1>
+<span class="col-sm-3"></span>
+</div>
+
+
+<%= form_for(:user,:url => {:action => 'create'},:html=>{:id=>"user",:name=>"user"}) do |f| %>
+
+<div class="container headfont " >    <span class="col-sm-3"></span><span class="col-sm-6">
+<h3 class="well" style="background:rgba(0,0,0,0.3)"><center>Registered user?<span > <%= link_to "Login",:controller=>'session',
+:action=>'login'%></span></center></h3></span>
+<span class="col-sm-3"></span>
+</div>
+<br>
+
+
+<table class="loginfont">
+<span class="col-sm-4"></span>
+<tr>
+	<td>First Name:</td>
+	<td><%=f.text_field(:FirstName,:maxlength => 20,:placeholder => "eg:sudharsan",:class=>'input' )%></td>
+</tr>
+
+<tr>
+	<td>Middle Name</td>
+	<td><%=f.text_field(:MiddleName,:maxlength => 20,:placeholder => "eg:kpm" ,:class=>'input')%></td>
+</tr>
+
+<tr>
+	<td>Last Name:</td>
+	<td><%=f.text_field(:LastName,:maxlength => 20,:placeholder => "eg:gandhi" ,:class=>'input')%></td>
+</tr>
+
+<tr>
+	<td>DOB:</td>
+	<td><%=f.date_field(:DateOfBirth,:maxlength => 20 ,:class=>'input')%></td>
+</tr>
+
+<tr>
+	<td>password:</td>
+	<td><%=f.password_field(:password,:maxlength => 25,:placeholder => "C$2kmql3",:class=>'input')%></td>
+</tr>
+
+<tr>
+	<td>Confirm Password:</td>
+	<td><%=f.password_field(:password_confirmation, :name => "cpwd", :maxlength => 25,:class=>'input')%></td>
+</tr>
+<tr>
+	<td>Gender:</td>
+	<td><%= f.radio_button(:Gender,"Groom")%> <label>Groom<label> &nbsp;<%= f.radio_button(:Gender,"Bride") %><label>Bride<label></td>
+</tr>
+
+<tr>
+	<td>Email ID:</td>
+	<td><%= f.email_field(:EmailID,:placeholder => "eg:sudharsangandhi@gmail.com", :maxlength => 100,:class=>'input') %></td>
+</tr>
+</table><br>
+<div>
+
+	<span class="col-sm-3"></span><button type="submit" class="col-sm-3 btn btn-primary btn-lg"><span class="glyphicon glyphicon-play"></span> REGISTER</button><span class="col-sm-1"></span>
+	<button type="reset" value="reset" class="col-sm-3 page-scroll btn btn-danger btn-lg"><span class="glyphicon glyphicon-retweet"></span> RESET</button>
+</div>
+
+
+<% end %>

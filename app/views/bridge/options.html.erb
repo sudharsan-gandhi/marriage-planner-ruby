@@ -1,0 +1,284 @@
+
+
+<div class="container-fluid">
+<h1 class="headfont jumbotron well " style="background: url('../assets/food.jpg');
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: 100%;
+color: #fed136;">
+			<span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
+                    </span> Food And Beverages</h1>
+
+
+</div>
+
+<div class="container-fluid">
+	<span class="col-sm-3"></span>
+		<h2 class="well col-sm-6 headfont" style="background:transparent">
+	<span class="col-sm-2"></span>
+	<span class="fa-stack fa-1x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+    </span> 
+Select your Starters</h2>
+<span class="col-sm-3"></span>
+</div>
+
+
+<%i=1%>
+<div class="container" > 
+<form action="save" method="post">
+<div class="panel panel-default">
+<table class="table table-hover">
+
+<tr class="stripehead">
+<th>Category</th>
+<th>Name</th>
+<th>Cost per Quantity</th>
+<th>Quantity</th><td></td>
+</tr>
+<!-- *********************************Starters***************************************** -->
+
+<tr class="bodyfont">
+	<td>
+		<%= label_tag("Starters") %>
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+		
+	</td>
+</tr>
+
+
+<%@Starters.each do |s|%>
+
+<tr class="stripefont">
+	<td>
+		
+	</td>
+	<td>
+		<%= label_tag(s.ItemName) %>
+	</td>
+	<td>
+		<%=label_tag([:useritembridge],s.ItemCost)%>
+	</td>
+	<td>
+		<%=number_field("#{i}",:Quantity,in: 0..1000,step: 1,:required=>"required", :class=>"input-lg form-control")%>
+	</td>
+	<td>
+		
+		<%=hidden_field("#{i}",:Item_ID,:value=>s.ID)%>
+		<%=hidden_field("#{i}",:User_ID,:value=>"1")%>
+	</td>
+</tr>
+<%i=i+1%>
+<%end%>
+<!-- *********************************Soups***************************************** -->
+<tr class="bodyfont">
+	<td>
+		<%= label_tag("Soups&Salads") %>
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+		
+	</td>
+</tr>
+<%@Soups.each do |s|%>
+
+<tr class="stripefont">
+	<td>
+		
+	</td>
+	<td>
+		<%= label_tag(s.ItemName) %>
+	</td>
+	<td>
+		<%=label_tag([:useritembridge],s.ItemCost)%>
+	</td>
+	<td>
+		<%=number_field("#{i}",:Quantity,in: 0..1000,step: 1,:required=>"required", :class=>"input-lg  form-control")%>
+	</td>
+	<td>
+		
+		<%=hidden_field("#{i}",:Item_ID,:value=>s.ID)%>
+		<%=hidden_field("#{i}",:User_ID,:value=>"1")%>
+	</td>
+</tr>
+<%i=i+1%>
+<%end%>
+<!-- *********************************MainCourse***************************************** -->
+<tr class="bodyfont">
+	<td>
+		<%= label_tag("MainCourse") %>
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+		
+	</td>
+</tr>
+<%@MainCourse.each do |s|%>
+
+<tr class="stripefont"><td>
+		
+	</td>
+	<td>
+		<%= label_tag(s.ItemName) %>
+	</td>
+	<td>
+		<%=label_tag([:useritembridge],s.ItemCost)%>
+	</td>
+	<td>
+		<%=number_field("#{i}",:Quantity,in: 0..1000,step: 1,:required=>"required", :class=>"input-lg  form-control")%>
+	</td>
+	<td>
+		
+		<%=hidden_field("#{i}",:Item_ID,:value=>s.ID)%>
+		<%=hidden_field("#{i}",:User_ID,:value=>"1")%>
+	</td>
+</tr>
+<%i=i+1%>
+<%end%>
+<!-- *********************************Desserts***************************************** -->
+<tr class="bodyfont">
+	<td>
+		<%= label_tag("Desserts") %>
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+		
+	</td>
+</tr>
+<%@Desserts.each do |s|%>
+
+<tr class="stripefont"><td>
+		
+	</td>
+	<td>
+		<%= label_tag(s.ItemName) %>
+	</td>
+	<td>
+		<%=label_tag([:useritembridge],s.ItemCost)%>
+	</td>
+	<td>
+		<%=number_field("#{i}",:Quantity,in: 0..1000,step: 1,:required=>"required", :class=>"input-lg  form-control")%>
+	</td>
+	<td>
+		
+		<%=hidden_field("#{i}",:Item_ID,:value=>s.ID)%>
+		<%=hidden_field("#{i}",:User_ID,:value=>"1")%>
+	</td>
+</tr>
+<%i=i+1%>
+<%end%>
+<!-- *********************************Beverages***************************************** -->
+<tr class="bodyfont">
+	<td>
+		<%= label_tag("Beverages") %>
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+	<td>
+		
+		
+	</td>
+</tr>
+<%@Beverages.each do |s|%>
+
+<tr class="stripefont"><td>
+		
+	</td>
+	<td>
+		<%= label_tag(s.ItemName) %>
+	</td>
+	<td>
+		<%=label_tag([:useritembridge],s.ItemCost)%>
+	</td>
+	<td>
+		<%=number_field("#{i}",:Quantity,in: 0..1000,step: 1,:required=>"required", :class=>"input-lg  form-control")%>
+	</td>
+	<td>
+		
+		<%=hidden_field("#{i}",:Item_ID,:value=>s.ID)%>
+		<%=hidden_field("#{i}",:User_ID,:value=>"1")%>
+	</td>
+</tr>
+<%i=i+1%>
+<%end%>
+<!-- *********************************end of options**************************************** -->
+<tr >
+	<td>
+	
+	</td>
+	<td></td>
+	<td colspan="2">
+		
+	</td>
+	<td colspan="2">
+		
+	</td>
+</tr>
+
+</table><div class="container-fluid" style="background:#001;padding:1em;">
+<span class="col-sm-2"></span><button type="submit" class="col-sm-3 btn btn-primary btn-lg"><span class="glyphicon glyphicon-play"></span> SUBMIT</button><span class="col-sm-3"></span>
+	<button type="reset" value="reset" class="col-sm-3 page-scroll btn btn-danger btn-lg"><span class="glyphicon glyphicon-retweet"></span> RESET</button>
+	<br><div><br>
+</div>
+
+<!-- <div class="container well" style="background:#001;padding:1em;">
+	<span class="col-sm-2"></span><button type="submit" class="col-sm-3 btn btn-primary btn-lg"><span class="glyphicon glyphicon-play"></span> SUBMIT</button><span class="col-sm-3"></span>
+	<button type="reset" value="reset" class="col-sm-3 page-scroll btn btn-danger btn-lg"><span class="glyphicon glyphicon-retweet"></span> RESET</button>
+	<br>
+</div> -->
+
+
+</form> 
+</div>
+
+
+

@@ -1,0 +1,66 @@
+<div class="container-fluid">
+<h1 class="headfont jumbotron well " style="background: url('../assets/food.jpg');
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: 100%;
+color: #fed136;">
+			<span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
+                    </span> Pre-Wedding</h1>
+
+<div class="container-fluid">
+	<span class="col-sm-3"></span>
+		<h2 class="well col-sm-6 headfont" style="background:transparent">
+	<span class="col-sm-2"></span>
+	<span class="fa-stack fa-1x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <i class="fa fa-link fa-stack-1x fa-inverse"></i>
+    </span> 
+Brace Yourselves</h2>
+<span class="col-sm-3"></span>
+</div>
+
+
+<%i=1%>
+<div class="container">
+<form action="save" method="post">
+<div class="panel panel-default">
+<table class="table table-hover">
+<tr class="stripehead">
+	<th>Select Your Option</th>
+	<th>Name</th>
+	<th>Description</th>
+	<th>Cost</th>
+</tr>
+<% @wedding.each do |w|%>
+	<tr class="stripefont">
+	<td>
+		<%= check_box("#{i}",:Quantity)%>
+		<%=hidden_field("#{i}",:Item_ID,:value=>w.ID)%>
+		<%=hidden_field("#{i}",:User_ID,:value=>"1")%>
+	</td>
+		<td>
+			<%=w.ItemName %>
+		</td>
+		<td>
+			<%=w.ItemDescription%>
+		</td>
+		<td>
+			<%=w.ItemCost%>
+		</td>
+	</tr>
+	<%i=i+1%>
+	<%end%>
+</table>
+
+<div class="container-fluid" style="background:#001;padding:1em;">
+<span class="col-sm-2"></span><button type="submit" class="col-sm-3 btn btn-primary btn-lg"><span class="glyphicon glyphicon-play"></span> SUBMIT</button><span class="col-sm-2"></span>
+	<button type="reset" value="reset" class="col-sm-3 page-scroll btn btn-danger btn-lg"><span class="glyphicon glyphicon-retweet"></span> RESET</button>
+	<br><div><br>
+</div>
+</div>
+</div>
+</form>
+

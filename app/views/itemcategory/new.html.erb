@@ -1,0 +1,12 @@
+<h1>Itemcategory#new</h1>
+<% form_for(:itemcategory, :url => {:action=>'create'}) do |f| %>
+<table>
+<tr>
+<td>Category Name</td>
+<td><%=f.text_field(:CategoryName) %></td>
+<td>Category Description</td>
+<td><%=f.text_field(:CategoryDescription) %></td>
+</tr>
+<tr><td></td><td><%= submit_tag("add Item category") %>
+</table>
+<%end%>
